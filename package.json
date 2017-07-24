@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/speech": "^0.10.1",
     "es6-promise": "^4.1.0",
     "mongodb-stitch": "0.0.16",
     "mysql-promise": "^4.1.0",
     "nconf": "^0.8.4",
+    "node-record-lpcm16": "^0.3.0",
     "restify": "^4.3.0"
   }
 }
