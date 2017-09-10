@@ -1,6 +1,7 @@
 import {createServer, CORS, queryParser, bodyParser} from "restify";
 import {Students} from "../actions/users-actions";
 import {GoogleSpeech} from "../google-speech/google-speech";
+import {Authentication} from "./authentication";
 
 const DEFAULT_PORT = 4000;
 
@@ -32,6 +33,9 @@ export class Server {
         this.server.get('/', (req, res) => {
             res.send('hello My Server');
         });
+
+        this.server.post('/authentication', Authentication.login);
+        this.server.get('/test', Authentication.test);
 
         let students: Students = new Students();
         this.server.get('/users', students.getUsers.bind(students));
