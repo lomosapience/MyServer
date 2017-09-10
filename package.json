@@ -2,20 +2,25 @@
   "name": "MyServer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/speech": "^0.10.1",
+    "aws-sdk": "*",
     "es6-promise": "^4.1.0",
     "mongodb-stitch": "0.0.16",
     "mysql-promise": "^4.1.0",
     "nconf": "^0.8.4",
     "node-record-lpcm16": "^0.3.0",
-    "restify": "^4.3.0"
+    "speaker": "^0.4.0",
+    "restify": "^4.3.0",
+    "stream": "0.0.2"
   }
 }

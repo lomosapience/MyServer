@@ -2,6 +2,7 @@ import {createServer, CORS, queryParser, bodyParser} from "restify";
 import {Students} from "../actions/users-actions";
 import {GoogleSpeech} from "../google-speech/google-speech";
 import {Authentication} from "./authentication";
+import {AwsTextToSpeech} from "../aws-speech/aws-text-to-speech/aws-text-to-speech";
 
 const DEFAULT_PORT = 4000;
 
@@ -42,6 +43,9 @@ export class Server {
 
         let googleSpeech: GoogleSpeech = new GoogleSpeech();
         this.server.get('/talk', googleSpeech.recognizeSpeech.bind(googleSpeech));
+
+        let awsTextToSpeech: AwsTextToSpeech = new AwsTextToSpeech();
+        this.server.post('/polly', awsTextToSpeech.textToSpeech.bind(awsTextToSpeech));
 
         this.server.listen(DEFAULT_PORT);
         console.log('Server started on port ' + DEFAULT_PORT);
