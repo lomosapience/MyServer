@@ -1,6 +1,6 @@
 import {createServer, CORS, queryParser, bodyParser} from "restify";
 import {Students} from "../actions/users-actions";
-import {GoogleSpeech} from "../speech/google-speech";
+import {GoogleSpeech} from "../google-speech/google-speech";
 
 const DEFAULT_PORT = 4000;
 
@@ -18,7 +18,7 @@ export class Server {
         this.server.opts(/\.*/, (req, res, next) => {
             res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
             res.header('Access-Control-Allow-Headers', 'Content-Type');
-            res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+            res.header('Access-Control-Allow-Credentials', 'true');
             res.send(200);
             next();
         });
