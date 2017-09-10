@@ -1,4 +1,4 @@
-import {DbWrapper} from '../controllers/dbWrapper';
+import {DbWrapper} from '../utils/mysql-db-wrapper';
 
 export class Students {
 
